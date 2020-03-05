@@ -5,20 +5,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 
-class StationsActivity : AppCompatActivity() {
+class ParametersActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_stations)
+        setContentView(R.layout.activity_parameters)
     }
 
     fun goBack(view: View) {
-        val intent = Intent(applicationContext, MainActivity::class.java)
+        val intent = Intent(applicationContext, StationsActivity::class.java)
         startActivity(intent)
     }
-    fun stationInfo(view: View) {
-        val intent = Intent(applicationContext, ParametersActivity::class.java)
-        startActivity(intent)
-    }
-
 }

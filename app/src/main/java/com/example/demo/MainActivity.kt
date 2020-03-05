@@ -18,6 +18,11 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    fun changeActivity(view: View){
+        val intent = Intent(applicationContext, StationsActivity::class.java)
+        startActivity(intent)
+    }
+
 
 
 
