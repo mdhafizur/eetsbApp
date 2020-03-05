@@ -19,21 +19,7 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/rectangle_topbar" />
 
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="29dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="356dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="14dp"
 
-        android:background="@drawable/icon_material_location_on"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView6"
-        app:layout_constraintEnd_toEndOf="@+id/imageView6"
-        app:layout_constraintHorizontal_bias="0.899"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
         android:id="@+id/imageView5"
@@ -41,7 +27,7 @@
         android:layout_height="62dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
@@ -52,7 +38,7 @@
         android:layout_width="46dp"
         android:layout_height="43dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="348dp"
+        android:layout_marginEnd="300dp"
         android:background="@drawable/icon_material_keyboard_backspace"
         android:onClick="goBack"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -70,10 +56,10 @@
         android:background="@drawable/icon_metro_weather"
         app:layout_constraintBottom_toBottomOf="@+id/imageView8"
         app:layout_constraintEnd_toEndOf="@+id/imageView5"
-        app:layout_constraintHorizontal_bias="0.416"
+        app:layout_constraintHorizontal_bias="0.365"
         app:layout_constraintStart_toEndOf="@+id/button4"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.636" />
+        app:layout_constraintVertical_bias="0.606" />
 
     <Button
         android:id="@+id/button7"
@@ -84,10 +70,10 @@
         android:background="@drawable/icon_awesome_download"
         app:layout_constraintBottom_toBottomOf="@+id/imageView5"
         app:layout_constraintEnd_toStartOf="@+id/button5"
-        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintHorizontal_bias="0.535"
         app:layout_constraintStart_toEndOf="@+id/button6"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.952" />
 
     <TextView
         android:id="@+id/textView5"
@@ -95,11 +81,28 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="23dp"
         android:text="Parameters"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/imageView5"
         app:layout_constraintEnd_toStartOf="@+id/button6"
-        app:layout_constraintHorizontal_bias="0.339"
+        app:layout_constraintHorizontal_bias="0.66"
         app:layout_constraintStart_toEndOf="@+id/button4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="29dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="312dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="14dp"
+
+        android:background="@drawable/icon_material_location_on"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView6"
+        app:layout_constraintEnd_toEndOf="@+id/imageView6"
+        app:layout_constraintHorizontal_bias="0.899"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
