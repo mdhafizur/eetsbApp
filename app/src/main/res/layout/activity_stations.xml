@@ -41,6 +41,7 @@
         android:layout_marginBottom="14dp"
         android:background="@drawable/icon_material_location_on"
 
+        android:onClick="stationLocation"
         app:layout_constraintBottom_toBottomOf="@+id/imageView6"
         app:layout_constraintEnd_toEndOf="@+id/imageView6"
         app:layout_constraintHorizontal_bias="0.847"
@@ -56,7 +57,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView6"
-        app:layout_constraintVertical_bias="0.998"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/rectangle_footer" />
 
     <ImageView

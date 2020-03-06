@@ -20,5 +20,10 @@ class StationsActivity : AppCompatActivity() {
         val intent = Intent(applicationContext, ParametersActivity::class.java)
         startActivity(intent)
     }
+    fun stationLocation(view: View) {
+        val intent = Intent(applicationContext, StationsMapsActivity::class.java)
+        startActivity(intent)
+    }
+
 
 }
