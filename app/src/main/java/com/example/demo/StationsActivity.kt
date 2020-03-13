@@ -1,9 +1,13 @@
 package com.example.demo
 
 import android.content.Intent
+import android.nfc.Tag
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Adapter
+import android.widget.ProgressBar
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -25,6 +29,9 @@ class StationsActivity : AppCompatActivity() {
     lateinit var recyclerView: RecyclerView
     lateinit var adapter: StationsAdapter
     lateinit var client: AsyncHttpClient
+    lateinit var wait : TextView
+    lateinit var progressBar: ProgressBar
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,12 +39,10 @@ class StationsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_stations)
 
         val URL: String =
-            "https://github.com/mdhafizur/eetsbApp/blob/master/app/src/main/assets/Test.xlsx"
+            "https://github.com/mdhafizur/eetsbApp/blob/master/app/src/main/assets/Test.xlsx?raw=true"
 
         recyclerView = findViewById(R.id.listOfData)
-        adapter = StationsAdapter(this)
-        recyclerView!!.layoutManager = LinearLayoutManager(this)
-        recyclerView!!.adapter = adapter
+
 
 
 
@@ -50,6 +55,9 @@ class StationsActivity : AppCompatActivity() {
 
 
                 Toast.makeText(this@StationsActivity, "File Downloaded", Toast.LENGTH_SHORT).show()
+                wait.visibility = View.GONE
+                progressBar.visibility = View.GONE
+
                 val ws = WorkbookSettings()
                 ws.setGCDisabled(true)
                 if (file != null) {
@@ -68,9 +76,11 @@ class StationsActivity : AppCompatActivity() {
                              thumbImages.add(row[2].getContents())
                          }
                          showData()*/
-                        var nameS: Cell = sheet.getCell(0, 0)
-                        println(nameS)
-                        println("Hafiz")
+                        var nameS: Cell = sheet.getCell(1, 4)
+
+                        showData()
+                        Log.d("TAG", "onSuccess: "+ nameS)
+
                     } catch (e: IOException) {
                         e.printStackTrace()
                     } catch (e: BiffException) {
@@ -90,14 +100,34 @@ class StationsActivity : AppCompatActivity() {
 
                 Toast.makeText(this@StationsActivity, "Download Failed", Toast.LENGTH_SHORT)
                     .show()
-                TODO("Not yet implemented")
+                wait.visibility = View.GONE
+                progressBar.visibility = View.GONE
+
+
             }
 
 
         })   //End of asynctask
 
 
+
     }
+    fun showData(){
+        adapter = StationsAdapter(this, "")
+        recyclerView!!.layoutManager = LinearLayoutManager(this)
+        recyclerView!!.adapter = adapter
+    }
+
+
+
+
+
+
+
+
+
+
+
 
     fun goBack(view: View) {
         val intent = Intent(applicationContext, MainActivity::class.java)
