@@ -38,9 +38,8 @@ dependencies {
     implementation 'com.opencsv:opencsv:4.6'
     implementation fileTree(dir: 'C:\\Users\\Hafiz\\Downloads\\Compressed\\poi-bin-3.12-20150511\\poi-3.12\\New folder', include: ['*.aar', '*.jar'], exclude: [])
 
-
-    /*   implementation 'org.apache.poi:poi:3.15'
-       implementation 'org.apache.poi:poi-ooxml:3.17'
-       implementation 'com.fasterxml:aalto-xml:1.2.2'*/
+    implementation 'net.sourceforge.jexcelapi:jxl:2.6.12'
+    implementation 'com.loopj.android:android-async-http:1.4.10'
+    implementation 'com.squareup.picasso:picasso:2.71828'
 
 }

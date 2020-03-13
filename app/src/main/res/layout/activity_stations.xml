@@ -32,7 +32,8 @@
         app:layout_constraintEnd_toStartOf="@+id/textView4"
         app:layout_constraintHorizontal_bias="0.338"
         app:layout_constraintStart_toStartOf="@+id/imageButton"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="UnknownId" />
 
     <Button
         android:id="@+id/button3"
@@ -52,8 +53,8 @@
 
     <ImageView
         android:id="@+id/imageView7"
-        android:layout_width="617dp"
-        android:layout_height="106dp"
+        android:layout_width="432dp"
+        android:layout_height="102dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -134,14 +135,15 @@
 
     <TextView
         android:id="@+id/batteryT"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="65dp"
+        android:layout_height="27dp"
+        android:text="battery"
         app:layout_constraintBottom_toBottomOf="@+id/imageButton"
         app:layout_constraintEnd_toEndOf="@+id/imageButton"
-        app:layout_constraintHorizontal_bias="0.715"
-        app:layout_constraintStart_toStartOf="@+id/imageButton"
+        app:layout_constraintHorizontal_bias="0.361"
+        app:layout_constraintStart_toEndOf="@+id/imageView4"
         app:layout_constraintTop_toTopOf="@+id/imageButton"
-        app:layout_constraintVertical_bias="0.802" />
+        app:layout_constraintVertical_bias="0.916" />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -152,8 +154,80 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="@+id/imageButton"
         app:layout_constraintTop_toTopOf="@+id/imageButton"
-        app:layout_constraintVertical_bias="0.816"
+        app:layout_constraintVertical_bias="0.928"
         app:srcCompat="@drawable/icon_ionic_md_battery_charging" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="184dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="164dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Data updated as of:"
+        app:layout_constraintEnd_toEndOf="@+id/imageButton"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/imageButton"
+        app:layout_constraintTop_toTopOf="@+id/imageButton" />
+
+    <TextView
+        android:id="@+id/dateU"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="dateU"
+        app:layout_constraintBottom_toTopOf="@+id/batteryT"
+        app:layout_constraintTop_toBottomOf="@+id/editText"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="258dp"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="124dp"
+        android:layout_height="169dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButton"
+        app:layout_constraintEnd_toStartOf="@+id/editText"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/imageButton"
+        app:layout_constraintTop_toTopOf="@+id/imageButton"
+        app:layout_constraintVertical_bias="0.447"
+        app:srcCompat="@drawable/ic_launcher_background" />
+
+    <TextView
+        android:id="@+id/aName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="name "
+        app:layout_constraintBottom_toBottomOf="@+id/imageButton"
+        app:layout_constraintEnd_toEndOf="@+id/imageButton"
+        app:layout_constraintHorizontal_bias="0.714"
+        app:layout_constraintStart_toStartOf="@+id/imageButton"
+        app:layout_constraintTop_toTopOf="@+id/imageButton"
+        app:layout_constraintVertical_bias="0.105" />
+
+    <TextView
+        android:id="@+id/aAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Address"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButton"
+        app:layout_constraintEnd_toEndOf="@+id/imageButton"
+        app:layout_constraintHorizontal_bias="0.746"
+        app:layout_constraintStart_toStartOf="@+id/imageButton"
+        app:layout_constraintTop_toBottomOf="@+id/aName"
+        app:layout_constraintVertical_bias="0.14" />
+
+    <TextView
+        android:id="@+id/Coordinates"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Coordinates"
+        app:layout_constraintBottom_toTopOf="@+id/editText"
+        app:layout_constraintEnd_toEndOf="@+id/imageButton"
+        app:layout_constraintStart_toEndOf="@+id/imageView5"
+        app:layout_constraintTop_toBottomOf="@+id/aAddress" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
