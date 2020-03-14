@@ -9,15 +9,18 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.List;
+
 
 public class StationsAdapter extends RecyclerView.Adapter<StationsAdapter.ViewHolder>  {
     LayoutInflater inflater;
-    String nameS;
+    private List<String> names;
 
 
-    public StationsAdapter(Context context, String nameS){ //Adapter constructor
+    public StationsAdapter(Context context, List<String> names){ //Adapter constructor
         this.inflater = LayoutInflater.from(context);
-        this.nameS = nameS;
+        this.names = names;
+
     }
 
 
@@ -30,23 +33,35 @@ public class StationsAdapter extends RecyclerView.Adapter<StationsAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        String name = names.get(0);
+        String address = names.get(1);
+        String coordinates = names.get(2);
+        String date = names.get(3);
+        String battery = names.get(4);
 
-
-        holder.nameS.setText(nameS);
+        holder.name.setText(name);
+        holder.address.setText(address);
+        holder.coordinates.setText(coordinates);
+        holder.date.setText(date);
+        holder.battery.setText(battery);
     }
 
     @Override
     public int getItemCount() {
-        return 1;
+        return names.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
-        TextView nameS;
+        TextView name, address, coordinates,battery,date;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            nameS = itemView.findViewById(R.id.sName);
+            name = itemView.findViewById(R.id.sName);
+            address = itemView.findViewById(R.id.sAddress);
+            coordinates = itemView.findViewById(R.id.sCoordinates);
+            date = itemView.findViewById(R.id.sDate);
+            battery = itemView.findViewById(R.id.sBattery);
         }
     }
 

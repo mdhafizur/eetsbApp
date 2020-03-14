@@ -134,16 +134,18 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/batteryS"
+        android:id="@+id/sBattery"
         android:layout_width="65dp"
         android:layout_height="27dp"
         android:text="battery"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
         app:layout_constraintEnd_toEndOf="@+id/imageButton"
-        app:layout_constraintHorizontal_bias="0.361"
+        app:layout_constraintHorizontal_bias="0.127"
         app:layout_constraintStart_toEndOf="@+id/imageView4"
-        app:layout_constraintTop_toTopOf="@+id/imageButton"
-        app:layout_constraintVertical_bias="0.916" />
+        app:layout_constraintTop_toTopOf="@+id/imageView4"
+        app:layout_constraintVertical_bias="0.555" />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -158,14 +160,19 @@
         app:srcCompat="@drawable/icon_ionic_md_battery_charging" />
 
     <TextView
-        android:id="@+id/dateS"
+        android:id="@+id/sDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="44dp"
+        android:layout_marginBottom="36dp"
         android:text="dateU"
-        app:layout_constraintBottom_toTopOf="@+id/batteryS"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="252dp" />
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/sBattery"
+        app:layout_constraintEnd_toEndOf="@+id/textView6"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        app:layout_constraintVertical_bias="0.666"
+        tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/imageView5"
@@ -176,39 +183,44 @@
         app:layout_constraintStart_toStartOf="@+id/imageButton"
         app:layout_constraintTop_toTopOf="@+id/imageButton"
         app:layout_constraintVertical_bias="0.447"
-        app:srcCompat="@drawable/ic_launcher_background" />
+        app:srcCompat="@drawable/proteus" />
 
     <TextView
         android:id="@+id/sName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="name "
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/imageButton"
         app:layout_constraintEnd_toEndOf="@+id/imageButton"
-        app:layout_constraintHorizontal_bias="0.714"
-        app:layout_constraintStart_toStartOf="@+id/imageButton"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toEndOf="@+id/imageView5"
         app:layout_constraintTop_toTopOf="@+id/imageButton"
-        app:layout_constraintVertical_bias="0.105" />
+        app:layout_constraintVertical_bias="0.109" />
 
     <TextView
         android:id="@+id/sAddress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="157dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="20dp"
         android:text="Address"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton"
-        app:layout_constraintEnd_toEndOf="@+id/imageButton"
-        app:layout_constraintHorizontal_bias="0.746"
-        app:layout_constraintStart_toStartOf="@+id/imageButton"
-        app:layout_constraintTop_toBottomOf="@+id/sName"
-        app:layout_constraintVertical_bias="0.14" />
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/sName"
+        app:layout_constraintHorizontal_bias="0.214"
+        app:layout_constraintStart_toStartOf="@+id/sName"
+        app:layout_constraintTop_toBottomOf="@+id/sName" />
 
     <TextView
         android:id="@+id/sCoordinates"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:text="Coordinates"
-        app:layout_constraintEnd_toEndOf="@+id/imageButton"
-        app:layout_constraintStart_toEndOf="@+id/imageView5"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/sName"
+        app:layout_constraintHorizontal_bias="0.615"
+        app:layout_constraintStart_toStartOf="@+id/sName"
         app:layout_constraintTop_toBottomOf="@+id/sAddress" />
 
     <TextView
@@ -216,12 +228,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Data updated at"
+        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/imageView4"
         app:layout_constraintEnd_toEndOf="@+id/imageButton"
-        app:layout_constraintHorizontal_bias="0.467"
-        app:layout_constraintStart_toEndOf="@+id/imageView5"
+        app:layout_constraintHorizontal_bias="0.403"
+        app:layout_constraintStart_toStartOf="@+id/sCoordinates"
         app:layout_constraintTop_toBottomOf="@+id/sCoordinates"
-        app:layout_constraintVertical_bias="0.376" />
+        app:layout_constraintVertical_bias="0.125" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:text="V"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/sBattery"
+        app:layout_constraintEnd_toEndOf="@+id/imageButton"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/sBattery"
+        app:layout_constraintTop_toTopOf="@+id/sBattery"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

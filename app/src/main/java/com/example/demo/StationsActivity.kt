@@ -29,8 +29,9 @@ class StationsActivity : AppCompatActivity() {
     lateinit var recyclerView: RecyclerView
     lateinit var adapter: StationsAdapter
     lateinit var client: AsyncHttpClient
-    lateinit var wait : TextView
-    lateinit var progressBar: ProgressBar
+    lateinit var nameS : MutableList<String>
+
+
 
 
 
@@ -39,24 +40,23 @@ class StationsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_stations)
 
         val URL: String =
-            "https://github.com/mdhafizur/eetsbApp/blob/master/app/src/main/assets/Test.xlsx?raw=true"
+            "https://github.com/mdhafizur/new/blob/master/Test.xls?raw=true"
 
-        recyclerView = findViewById(R.id.listOfData)
-
-
+        nameS = ArrayList()
 
 
 
 
 
-        client = AsyncHttpClient()
-        client.get(URL, object : FileAsyncHttpResponseHandler(this) {
+
+
+        this.client = AsyncHttpClient()
+        this.client.get(URL, object : FileAsyncHttpResponseHandler(this) {
             override fun onSuccess(statusCode: Int, headers: Array<out Header>?, file: File?) {
 
 
                 Toast.makeText(this@StationsActivity, "File Downloaded", Toast.LENGTH_SHORT).show()
-                wait.visibility = View.GONE
-                progressBar.visibility = View.GONE
+
 
                 val ws = WorkbookSettings()
                 ws.setGCDisabled(true)
@@ -66,17 +66,16 @@ class StationsActivity : AppCompatActivity() {
                      progressBar.setVisibility(View.GONE)*/
                     try {
                         var workbook = Workbook.getWorkbook(file)
-                        val sheet: Sheet = workbook!!.getSheet(0)
-                        //Cell[] row = sheet.getRow(1);
-                        //text.setText(row[0].getContents());
-                        /* for (i in 0 until sheet.getRows()) {
-                             val row: Array<Cell> = sheet.getRow(i)
-                             storyTitle.add(row[0].getContents())
-                             storyContent.add(row[1].getContents())
-                             thumbImages.add(row[2].getContents())
-                         }
-                         showData()*/
-                        var nameS: Cell = sheet.getCell(1, 4)
+                        val sheet: Sheet = workbook.getSheet(0)
+                        val row: Array<Cell> = sheet.getRow(3)
+                        nameS.add(row[0].getContents())
+                        nameS.add(row[1].getContents())
+                        nameS.add(row[2].getContents())
+                        val r: Array<Cell> = sheet.getRow(6)
+                        nameS.add(r[0].getContents())
+                        nameS.add(r[1].getContents())
+
+
 
                         showData()
                         Log.d("TAG", "onSuccess: "+ nameS)
@@ -100,8 +99,7 @@ class StationsActivity : AppCompatActivity() {
 
                 Toast.makeText(this@StationsActivity, "Download Failed", Toast.LENGTH_SHORT)
                     .show()
-                wait.visibility = View.GONE
-                progressBar.visibility = View.GONE
+
 
 
             }
@@ -113,9 +111,10 @@ class StationsActivity : AppCompatActivity() {
 
     }
     fun showData(){
-        adapter = StationsAdapter(this, "")
-        recyclerView!!.layoutManager = LinearLayoutManager(this)
-        recyclerView!!.adapter = adapter
+        recyclerView = findViewById(R.id.listOfData)
+        adapter = StationsAdapter(this, nameS)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = adapter
     }
 
 
