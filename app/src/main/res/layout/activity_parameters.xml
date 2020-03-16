@@ -28,6 +28,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginBottom="24dp"
         android:background="@drawable/icon_material_keyboard_backspace"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
         android:onClick="goBack"
         app:layout_constraintBottom_toBottomOf="@+id/imageView8"
         app:layout_constraintStart_toStartOf="@+id/imageView8"
@@ -42,6 +43,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="17dp"
         android:background="@drawable/icon_awesome_download"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
         app:layout_constraintBottom_toBottomOf="@+id/imageView8"
         app:layout_constraintEnd_toStartOf="@+id/button5"
         app:layout_constraintTop_toTopOf="parent"
@@ -54,6 +56,8 @@
 
         android:layout_marginEnd="20dp"
         android:background="@drawable/icon_metro_weather"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+
         app:layout_constraintBottom_toBottomOf="@+id/button7"
         app:layout_constraintEnd_toStartOf="@+id/button7"
         app:layout_constraintTop_toTopOf="@+id/button7"
@@ -81,6 +85,7 @@
 
         android:layout_marginEnd="36dp"
         android:background="@drawable/icon_material_location_on"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
         app:layout_constraintBottom_toBottomOf="@+id/button7"
         app:layout_constraintEnd_toEndOf="@+id/imageView8"
         app:layout_constraintTop_toTopOf="@+id/imageView8"

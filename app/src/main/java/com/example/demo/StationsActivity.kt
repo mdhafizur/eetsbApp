@@ -1,17 +1,16 @@
 package com.example.demo
 
 import android.content.Intent
-import android.nfc.Tag
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Adapter
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.demo.R.id.SprogressBar
 import com.loopj.android.http.AsyncHttpClient
 import com.loopj.android.http.FileAsyncHttpResponseHandler
 import cz.msebera.android.httpclient.Header
@@ -30,8 +29,8 @@ class StationsActivity : AppCompatActivity() {
     lateinit var adapter: StationsAdapter
     lateinit var client: AsyncHttpClient
     lateinit var nameS : MutableList<String>
-
-
+     lateinit var progressBar : ProgressBar
+    lateinit var sync : TextView
 
 
 
@@ -39,24 +38,26 @@ class StationsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_stations)
 
+        recyclerView = findViewById(R.id.listOfStations)
+        progressBar = findViewById(R.id.SprogressBar)
+        sync = findViewById(R.id.Ssync)
+
         val URL: String =
             "https://github.com/mdhafizur/new/blob/master/Test.xls?raw=true"
 
         nameS = ArrayList()
 
 
-
-
-
-
-
         this.client = AsyncHttpClient()
+        progressBar.visibility = View.VISIBLE
+        sync.visibility = View.VISIBLE
         this.client.get(URL, object : FileAsyncHttpResponseHandler(this) {
             override fun onSuccess(statusCode: Int, headers: Array<out Header>?, file: File?) {
 
+                progressBar.visibility = View.GONE
+                sync.visibility = View.GONE
 
-                Toast.makeText(this@StationsActivity, "File Downloaded", Toast.LENGTH_SHORT).show()
-
+                Toast.makeText(this@StationsActivity, "File Synced", Toast.LENGTH_SHORT).show()
 
                 val ws = WorkbookSettings()
                 ws.setGCDisabled(true)
@@ -96,7 +97,8 @@ class StationsActivity : AppCompatActivity() {
                 throwable: Throwable?,
                 file: File?
             ) {
-
+                progressBar.visibility = View.GONE
+                sync.visibility = View.GONE
                 Toast.makeText(this@StationsActivity, "Download Failed", Toast.LENGTH_SHORT)
                     .show()
 
@@ -111,7 +113,7 @@ class StationsActivity : AppCompatActivity() {
 
     }
     fun showData(){
-        recyclerView = findViewById(R.id.listOfData)
+        recyclerView = findViewById(R.id.listOfStations)
         adapter = StationsAdapter(this, nameS)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = adapter

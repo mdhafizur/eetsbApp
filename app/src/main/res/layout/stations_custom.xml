@@ -27,6 +27,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="24dp"
         android:background="@drawable/icon_material_keyboard_backspace"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
         android:onClick="goBack"
         app:layout_constraintBottom_toBottomOf="@+id/imageView6"
         app:layout_constraintEnd_toStartOf="@+id/textView4"
@@ -43,6 +44,8 @@
         android:layout_marginBottom="14dp"
 
         android:background="@drawable/icon_material_location_on"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+
         android:onClick="stationLocation"
         app:layout_constraintBottom_toBottomOf="@+id/imageView6"
         app:layout_constraintEnd_toEndOf="@+id/imageButton"
@@ -113,7 +116,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView6"
         app:layout_constraintVertical_bias="0.131"
-        app:srcCompat="@drawable/rectangle_station_holder" />
+        app:srcCompat="@drawable/rectangle_station_holder"
+        android:foreground="?attr/selectableItemBackgroundBorderless"/>
 
     <TextView
         android:id="@+id/battery_level"

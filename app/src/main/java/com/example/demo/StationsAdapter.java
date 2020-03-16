@@ -48,7 +48,7 @@ public class StationsAdapter extends RecyclerView.Adapter<StationsAdapter.ViewHo
 
     @Override
     public int getItemCount() {
-        return names.size();
+        return 1;
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
