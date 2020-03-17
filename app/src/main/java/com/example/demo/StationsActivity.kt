@@ -10,7 +10,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.demo.R.id.SprogressBar
 import com.loopj.android.http.AsyncHttpClient
 import com.loopj.android.http.FileAsyncHttpResponseHandler
 import cz.msebera.android.httpclient.Header
@@ -19,6 +18,7 @@ import jxl.Sheet
 import jxl.Workbook
 import jxl.WorkbookSettings
 import jxl.read.biff.BiffException
+import org.apache.log4j.chainsaw.Main
 import java.io.File
 import java.io.IOException
 
@@ -133,15 +133,25 @@ class StationsActivity : AppCompatActivity() {
     fun goBack(view: View) {
         val intent = Intent(applicationContext, MainActivity::class.java)
         startActivity(intent)
+        finish()
+
     }
 
     fun stationInfo(view: View) {
         val intent = Intent(applicationContext, ParametersActivity::class.java)
         startActivity(intent)
+        finish()
+
     }
 
     fun stationLocation(view: View) {
         val intent = Intent(applicationContext, StationsMapsActivity::class.java)
         startActivity(intent)
+
     }
+
+
+
+
+
 }
