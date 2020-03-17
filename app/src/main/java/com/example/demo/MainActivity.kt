@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     fun changeActivity(view: View) {
         val intent = Intent(applicationContext, StationsActivity::class.java)
         startActivity(intent)
+        finish()
 
 
     }
@@ -27,13 +28,15 @@ class MainActivity : AppCompatActivity() {
     override fun onBackPressed() {
         if (doubleBackToExitPressedOnce) {
             super.onBackPressed()
-            finish()
+            return
+
         }
 
         this.doubleBackToExitPressedOnce = true
         Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show()
 
         Handler().postDelayed(Runnable { doubleBackToExitPressedOnce = false }, 2000)
+
     }
 
 

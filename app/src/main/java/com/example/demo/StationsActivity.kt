@@ -149,6 +149,11 @@ class StationsActivity : AppCompatActivity() {
         startActivity(intent)
 
     }
+    override fun onBackPressed() {
+        val intent = Intent(applicationContext, MainActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
 
 
 
